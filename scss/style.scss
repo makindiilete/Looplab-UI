@@ -1,0 +1,105 @@
+//This are custom nicknames we set by placing $ infront so we can give them attributes and refrence them later in this scss.
+$bg-color:#333;
+$font-color:#fff;
+$primary-color:#008ed6;
+$dark-overlay: rgba(0,0,0,0.7);//the color here are the first 3 numbers, the fourth is the opacity which can be from 0 t0 1 where 1 is no opacity
+$landing-icon-size:30px;
+$btn-color: #d60084;
+//This affects all the content of the page inside body
+body{
+  background:$bg-color;//background color
+  color: $font-color;//font color
+  // to set  custom font for the whole page, use {font-family: Impact;}, you can change the impact to any font
+}
+//This gives our navbar a bottom border of 3px solid and 0.8 opacity
+.navbar{
+  border-bottom:$primary-color 3px solid;
+  opacity:0.8;
+}
+
+//This gives our home-section a picture background, our home section id has bin refrenced inside our header
+#home-section{
+  background:url('../img/home.jpg') no-repeat center top fixed;
+  background-size:cover; //Cover will fill up the whole space by strecthing it, "contain" will show the picture true dimension
+  background-attachment: fixed;
+  min-height: 700px;
+//The next line modification is for the ".dark-overlay" which has been refrenced in our html @ d begining of HOME SECTION
+  .dark-overlay{//We already set dark overlay in our document line 68, and we are only quoting it here using it to cover our image
+    background-color: $dark-overlay;//We already set dark overlay in our document line 68, and we are only quoting it here using it to cover our image
+    position: absolute; //cover all
+    top: 0;
+    left: 0%;
+    width: 100%;
+    min-height: 700px;
+  }
+//The next line modification is for the ".home-inner" which has been refrenced in our html @ d begining of HOME SECTION
+  .home-inner{
+    padding-top:150px; // There will be 150px space added to the top
+  }
+//The next line modification is for card ".card-form" has been refrenced in our html card section
+  .card-form{
+    opacity: 0.8; // There will be 0.8 opacity (1 is the maximum and 0 is the minimum) added to the card dt house the form
+    border-radius: 20px;
+  }
+//The next line modification is for fontawesome ".fa" has been refrenced in our html fontawesome section
+  .fa{
+    color:$primary-color;
+    background: #fff; //This put the fontawesome text/icon on a background with the color quoted
+    padding:4px; //This put a 4px spaces on all sides of the icon
+    border-radius: 5px; //This gives the background rectangle where the icon sits a rounded corner of 5px
+    font-size:$landing-icon-size; //This determines how big the icon will be using the size in the refrenced name at the top of this page {$landing-icon-size:30px;}
+  }
+}
+//This gives our buttons a custom color to our submit form button using the id we already refrenced inside the btn class
+.submitbtn{
+  border-radius: 20px; //corner radius
+  background: $btn-color;
+}
+
+.submitbtn2{
+  border-radius: 20px; //corner radius
+  border-color: $btn-color;
+}
+
+//This gives our brand/logo text a custom font using the .brand we already refrenced inside our nav-brand class
+.brand{
+  font-family: Forte; //Font name is "Forte
+}
+
+
+#explore-section{
+  .fa{
+    color: #fff;
+    background: #333;
+    padding: 4px;
+    border-radius:5px;
+    font-size: $landing-icon-size
+  }
+}
+
+#create-section{
+  .fa{
+    color:$primary-color;
+    background:#fff;
+    padding: 4px;
+    border-radius:5px;
+    font-size: $landing-icon-size
+  }
+}
+
+#share-section{
+  .fa{
+    color: #fff;
+    background: #333;
+    padding: 4px;
+    border-radius:5px;
+    font-size: $landing-icon-size
+  }
+}
+
+
+@media(max-width:576px){
+  nav .container{
+    width:70%;
+  }
+}
